@@ -180,7 +180,8 @@ class GeofieldWidget extends GeofieldBaseWidget {
     if (!empty($populate_file_field) && !empty($form[$populate_file_field])) {
       $element['trigger'] = [
         '#type' => 'submit',
-        '#value' => $this->t('Import geometry from uploaded files'),
+        '#value' => $this->t('Load asset geometry from uploaded files'),
+        '#description' => $this->t('This will copy the geometry from the uploaded files into this single asset geometry. For multiple assets please use...')
         '#submit' => [[$this, 'fileParse']],
         '#ajax' => [
           'wrapper' => $field_wrapper_id,
